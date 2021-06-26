@@ -21,7 +21,8 @@ class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
     controller.getAvailableCameras();
     controller.statusNotifier.addListener(() {
       if (controller.status.hasBarcode) {
-        Navigator.pushNamed(context, "/insert_boleto");
+        Navigator.pushNamed(context, "/insert_boleto",
+            arguments: controller.status.barcode);
       }
     });
     super.initState();
@@ -35,14 +36,6 @@ class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
 
   @override
   Widget build(BuildContext context) {
-    // return BottomSheetWidget(
-    //   title: "Não foi possível identificar um código de barras.",
-    //   subtitle: "Tente escanear novamente ou digite o código do seu boleto",
-    //   primaryLabel: "Escanear novamente",
-    //   primaryOnPressed: () {},
-    //   secondaryLabel: "Digitar código",
-    //   secondaryOnPressed: () {},
-    // );
     return SafeArea(
       top: true,
       bottom: true,
