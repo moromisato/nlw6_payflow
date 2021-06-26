@@ -29,6 +29,8 @@ class _InsertBoletoPageState extends State<InsertBoletoPage> {
   void initState() {
     if (widget.barcode != null) {
       barcodeInputTextController.text = widget.barcode!;
+    } else {
+      barcodeInputTextController.text = "";
     }
     super.initState();
   }
@@ -111,11 +113,14 @@ class _InsertBoletoPageState extends State<InsertBoletoPage> {
         enableSecondaryColor: true,
         primaryLabel: "Cancelar",
         primaryOnPressed: () {
-          Navigator.pop(context);
+          Navigator.popUntil(context, ModalRoute.withName("/home"));
         },
         secondaryLabel: "Cadastrar",
-        secondaryOnPressed: () {
-          controller.registerBoleto();
+        secondaryOnPressed: () async {
+          bool saved = await controller.validateBoleto();
+          if (saved) {
+            Navigator.popUntil(context, ModalRoute.withName("/home"));
+          }
         },
       ),
     );
