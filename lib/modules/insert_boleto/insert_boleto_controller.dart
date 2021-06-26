@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:nlw6_payflow/shared/models/boleto_model.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class InsertBoletoController {
   final formKey = GlobalKey<FormState>();
@@ -20,8 +21,19 @@ class InsertBoletoController {
         name: name, dueDate: dueDate, value: value, barcode: barcode);
   }
 
+  Future<void> saveBoleto() async {
+    try {
+      final instance = await SharedPreferences.getInstance();
+      final boletos = instance.getStringList("boletos") ?? <String>[];
+      boletos.add(model.toJson());
+      await instance.setStringList("boletos", boletos);
+    } catch (error) {}
+  }
+
   void registerBoleto() {
     final form = formKey.currentState;
-    if (form!.validate()) {}
+    if (form!.validate()) {
+      print(model);
+    }
   }
 }
