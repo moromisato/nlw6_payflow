@@ -1,6 +1,6 @@
 # nlw6_payflow
 
-[English version]("./../README-en.md")
+[English version](https://github.com/moromisato/nlw6_payflow/blob/main/README-en.md)
 
 <img src="./assets/Capa.png" style="zoom:55%;" />
 
