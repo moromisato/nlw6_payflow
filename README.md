@@ -1,16 +1,45 @@
 # nlw6_payflow
 
-A new Flutter project.
+[English version]("./../README-en.md")
 
-## Getting Started
+<img src="./assets/Capa.png" style="zoom:55%;" />
 
-This project is a starting point for a Flutter application.
+<center style="font-size: 18px">Esse projeto foi criado durante a *Next Level Week 6 - Edição Together*.
 
-A few resources to get you started if this is your first Flutter project:
+<center style="font-size: 18px">A ideia por trás do projeto é um aplicativo para o gerenciamento de boletos.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+### Stack e bibliotecas
+
+[Flutter](https://flutter.dev/)
+
+[Firebase](https://firebase.google.com/?hl=pt)
+
+[google-fonts](https://pub.dev/packages/google_fonts)
+
+[google-sign-in](https://pub.dev/packages/google_sign_in)
+
+[animated-card](https://pub.dev/packages/animated_card)
+
+[font-awesome](https://pub.dev/packages/font_awesome)
+
+
+
+### Rodando o projeto
+
+Primeiro clone o repositório em algum diretório da sua máquina.
+
+Depois navegue até a pasta do projeto e rode o comando para instalar as depedências: 
+
+```text
+flutter pub get
+```
+
+E por fim para executar:
+
+```
+flutter run
+```
+
+Obs: Se estiver usando o VSCode com a extensão do flutter, assim que abrir o projeto ele irá abrir uma janela perguntando se deseja baixar as depenências, após baixadas você também pode utilizar a aba de debug para rodar o projeto.
